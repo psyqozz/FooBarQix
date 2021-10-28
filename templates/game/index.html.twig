@@ -16,17 +16,18 @@
             {{ form_errors(form) }}
         </div>
 
-        <div class="row">
-            <div class="col">
-                {{ form_row(form.input) }}
+        <div class="form-group">
+            <div class="col form-control">
+                {{ form_label(form.input, '', {'attr': {'class': 'foo'}} ) }}
+                {{ form_widget(form.input, {'attr': {'class': 'form-control'}}) }}
             </div>
         </div>
 
-    <div class="row">
-        <div class="col">
-            {{ form_row(form.submit) }}
+        <div class="form-action">
+            <div class="col ">
+                {{ form_row(form.submit) }}
+            </div>
         </div>
-    </div>
     {{ form_end(form) }}
     {{ gameReturn }}
 </div>

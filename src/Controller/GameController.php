@@ -24,7 +24,6 @@ class GameController extends AbstractController
         if ($gameForm->isSubmitted() && $gameForm->isValid()) {
             $data = $gameForm->getData();
             $numbers = $data['input'];
-            $gameReturn = $numbers;
             if($numbers % 3 == 0){
                 $gameReturn = $rules[0];
             }
@@ -48,6 +47,7 @@ class GameController extends AbstractController
                     break;
                 }
             }
+            $gameReturn = $gameReturn == "" ? $numbers : $gameReturn;
         }
 
         return $this->render('game/index.html.twig', [
