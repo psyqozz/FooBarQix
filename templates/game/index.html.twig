@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello GameController!{% endblock %}
+{% block title %} FooBarQix !{% endblock %}
 
 {% block body %}
 <style>
@@ -21,6 +21,13 @@
                 {{ form_row(form.input) }}
             </div>
         </div>
+
+    <div class="row">
+        <div class="col">
+            {{ form_row(form.submit) }}
+        </div>
+    </div>
     {{ form_end(form) }}
+    {{ gameReturn }}
 </div>
 {% endblock %}
