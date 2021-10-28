@@ -1,4 +1,4 @@
-** Step 1 **
+-- Step 1 --
 ```
 Rules
 If the number is divisible by 3, write “Foo” instead of the number
@@ -26,7 +26,7 @@ Examples
 51 => FooBar
 53 => BarFoo
 ```
-** Step 2 **
+-- Step 2 --
 We have a new business request: we must keep a trace of 0 in numbers, each 0 must be replaced by char “*“.
 
 Examples
