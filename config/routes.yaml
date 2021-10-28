@@ -1,0 +1,3 @@
+app_foo_bar_qix:
+    path: /
+    controller: App\Controller\GameController::index
