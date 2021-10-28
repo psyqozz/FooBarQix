@@ -13,14 +13,18 @@ class GameController extends AbstractController
     /**
      * @Route("/game", name="game")
      * @return Response
+     * Get the game return
      */
     public function index(Request $request): Response
     {
+        // rule of the game  3 = Foo - 5 = Bar - 7 = Qix
         $rules = ['Foo', 'Bar', 'Qix'];
         $gameReturn = "";
+        $error = "";
         $gameForm = $this->createForm(GameFormType::class, null);
 
         $gameForm->handleRequest($request);
+        // If we receive digits
         if ($gameForm->isSubmitted() && $gameForm->isValid()) {
             $data = $gameForm->getData();
             $numbers = $data['input'];
@@ -48,12 +52,15 @@ class GameController extends AbstractController
                 }
             }
             $gameReturn = $gameReturn == "" ? $numbers : $gameReturn;
+        } else {
+            $error = "Please enter only digits";
         }
 
         return $this->render('game/index.html.twig', [
             'controller_name' => 'RuleController',
             'form' => $gameForm->createView(),
-            'gameReturn' => $gameReturn
+            'gameReturn' => $gameReturn,
+            'error' => $error
         ]);
     }
 }
