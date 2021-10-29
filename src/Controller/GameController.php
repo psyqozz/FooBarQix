@@ -28,6 +28,7 @@ class GameController extends AbstractController
         if ($gameForm->isSubmitted() && $gameForm->isValid()) {
             $data = $gameForm->getData();
             $numbers = $data['input'];
+            //check if divide by 3,5,7 is true
             if($numbers % 3 == 0){
                 $gameReturn = $rules[0];
             }
@@ -38,6 +39,7 @@ class GameController extends AbstractController
                 $gameReturn .= $rules[2];
             }
             $digits = str_split($data['input'], 1);
+            //check all digits
             foreach ($digits as $digit){
                 switch($digit){
                     case '0':
@@ -60,7 +62,6 @@ class GameController extends AbstractController
         }
 
         return $this->render('game/index.html.twig', [
-            'controller_name' => 'RuleController',
             'form' => $gameForm->createView(),
             'gameReturn' => $gameReturn,
             'error' => $error

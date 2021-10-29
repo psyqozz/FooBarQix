@@ -3,10 +3,13 @@
 {% block title %} FooBarQix !{% endblock %}
 
 {% block body %}
+    <!-- add navbar component -->
     {% include('/components/navbar.html.twig') %}
+    <!-- div: example-wrapper -->
     <div class="example-wrapper height-50 bg-light">
         <h1>FooBarQix game ✅</h1>
 
+        <!-- form -->
         {{ form_start(form) }}
             <div class="my-custom-class-for-errors">
                 {{ form_errors(form) }}
@@ -33,10 +36,16 @@
                 </div>
             </div>
         {{ form_end(form) }}
+        <!-- form -->
+
+        <!-- div: game return -->
         <div class="text-muted form-label text-center">
             <h2>{{ gameReturn }}</h2>
         </div>
-</div>
-    {% include('/components/footer.html.twig') %}
+        <!-- div: game return -->
+    </div>
+    <!-- div: example-wrapper -->
 
+    <!-- add footer component -->
+    {% include('/components/footer.html.twig') %}
 {% endblock %}
