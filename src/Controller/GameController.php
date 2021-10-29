@@ -40,6 +40,9 @@ class GameController extends AbstractController
             $digits = str_split($data['input'], 1);
             foreach ($digits as $digit){
                 switch($digit){
+                    case '0':
+                        $gameReturn .= '*';
+                    break;
                     case '3':
                         $gameReturn .= $rules[0];
                     break;
@@ -51,7 +54,7 @@ class GameController extends AbstractController
                     break;
                 }
             }
-            $gameReturn = $gameReturn == "" ? $numbers : $gameReturn;
+            $gameReturn = $gameReturn == "" || $gameReturn == "*" ? str_replace('0', '*', $numbers) : $gameReturn;
         } else {
             $error = "Please enter only digits";
         }
