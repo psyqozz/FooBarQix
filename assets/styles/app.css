@@ -39,7 +39,7 @@ a {
     align-items: center;
     justify-content: space-between;
     padding: 0 1rem;
-    background-color: rebeccapurple;
+    background-color: #45637d;
     z-index: var(--z-fixed);
     transition: .5s
 }
@@ -68,7 +68,7 @@ a {
     left: -30%;
     width: var(--nav-width);
     height: 100vh;
-    background-color: rebeccapurple;
+    background-color: #45637d;
     padding: .5rem 1rem 0 0;
     transition: .5s;
     z-index: var(--z-fixed)
@@ -142,7 +142,7 @@ a {
 }
 
 .height-50 {
-    height: 50vh
+    height: 55vh
 }
 
 @media screen and (min-width: 768px) {

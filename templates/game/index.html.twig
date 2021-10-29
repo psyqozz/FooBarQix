@@ -3,36 +3,40 @@
 {% block title %} FooBarQix !{% endblock %}
 
 {% block body %}
-{% include('/game/navbar.html.twig') %}
-<div class="example-wrapper height-50 bg-light">
-    <h1>FooBarQix game ✅</h1>
+    {% include('/components/navbar.html.twig') %}
+    <div class="example-wrapper height-50 bg-light">
+        <h1>FooBarQix game ✅</h1>
 
-    {{ form_start(form) }}
-        <div class="my-custom-class-for-errors">
-            {{ form_errors(form) }}
-        </div>
+        {{ form_start(form) }}
+            <div class="my-custom-class-for-errors">
+                {{ form_errors(form) }}
+            </div>
 
-        <div class="form-group">
-            <div class="col form-control">
-                {{ form_label(form.input, '', {'attr': {'class': 'foo'}} ) }}
-                {{ form_widget(form.input, {'attr': {'class': 'form-control'}}) }}
-                {% if error != "" %}
-                <div class="alert alert-danger d-flex align-items-center" role="alert">
-                    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
-                    <div>
-                        {{ error }}
+            <div class="form-group mb-3">
+                <div class="col">
+                    {{ form_label(form.input, '', {'attr': {'class': 'form-label'}} ) }}
+                    {{ form_widget(form.input, {'attr': {'class': 'form-control'}}) }}
+                    {% if error != "" %}
+                    <div class="alert alert-danger d-flex align-items-center" role="alert">
+                        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+                        <div>
+                            {{ error }}
+                        </div>
                     </div>
+                    {% endif %}
                 </div>
-                {% endif %}
             </div>
-        </div>
 
-        <div class="form-action">
-            <div class="col ">
-                {{ form_row(form.submit) }}
+            <div class="form-action">
+                <div class="col text-center">
+                    {{ form_row(form.submit) }}
+                </div>
             </div>
+        {{ form_end(form) }}
+        <div class="text-muted form-label text-center">
+            <h2>{{ gameReturn }}</h2>
         </div>
-    {{ form_end(form) }}
-    {{ gameReturn }}
 </div>
+    {% include('/components/footer.html.twig') %}
+
 {% endblock %}
