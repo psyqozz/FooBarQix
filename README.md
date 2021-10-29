@@ -1,3 +1,16 @@
+-- Start Project --
+```
+On FooBarQix directory :
+
+- Composer install
+- Symfony server:start
+
+- Yarn install
+- Yarn encore dev
+
+Enjoy It
+```
+
 -- Step 1 --
 ```
 Rules
